@@ -24,7 +24,7 @@ export default class Blank extends React.Component {
     }
   }
 
-  state = {}
+  state = { DateTimePicker_17: new Date("") }
 
   render = () => (
     <View>
@@ -38,6 +38,13 @@ export default class Blank extends React.Component {
           <Button title="Press me!" onPress={() => alert("Pressed!")} />
         </View>
       </View>
+      <DateTimePicker
+        showIcon={false}
+        date={this.state.DateTimePicker_17}
+        onDateChange={selectedDate =>
+          this.setState({ DateTimePicker_17: selectedDate })
+        }
+      />
     </View>
   )
 }
@@ -50,5 +57,6 @@ const styles = StyleSheet.create({
   View_8: {},
   Button_14: {},
   View_9: {},
-  Button_16: {}
+  Button_16: {},
+  DateTimePicker_17: {}
 })
